@@ -9,10 +9,12 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { errorInterceptorProvider } from './_services/error.interceptor';
+import { AlertifyService } from './_services/alertify.service';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
-   declarations: [ 
-      AppComponent, 
+   declarations: [
+      AppComponent,
       NavComponent,
       HomeComponent,
       RegisterComponent,
@@ -21,10 +23,12 @@ import { errorInterceptorProvider } from './_services/error.interceptor';
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
-      errorInterceptorProvider
+      errorInterceptorProvider,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent,
